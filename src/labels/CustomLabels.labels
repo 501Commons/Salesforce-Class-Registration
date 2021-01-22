@@ -54,14 +54,21 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_ClassReg_ChildSchoolName</shortDescription>
-        <value>Student&apos;s School</value>
+        <value>Student&apos;s School / Program Location</value>
+    </labels>
+    <labels>
+        <fullName>C501_ClassReg_VirtualClass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>C501_ClassReg_VirtualClass</shortDescription>
+        <value>After-school program virtual</value>
     </labels>
     <labels>
         <fullName>C501_ClassReg_ChildSchoolRegion</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_ClassReg_ChildSchoolRegion</shortDescription>
-        <value>Techbridge serves girls in four different regions. Which region is your child&apos;s school in?</value>
+        <value>Techbridge serves girls in three different regions. Which region is your child&apos;s school in?</value>
     </labels>
     <labels>
         <fullName>C501_ClassReg_EvalStudy</fullName>
@@ -96,7 +103,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_ClassReg_EvalStudyH1P3</shortDescription>
-        <value>This paper talks about the study and the choice that you have to take part in it.  You can ask questions any time. We will also talk with the youth in the program and ask if they want to be part of the evaluation.</value>
+        <value>This paper talks about the study and the choice that you have to let your child take part in it.  You can ask questions any time.</value>
     </labels>
     <labels>
         <fullName>C501_ClassReg_EvalStudyH2</fullName>
@@ -110,10 +117,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_ClassReg_EvalStudyH2li</shortDescription>
-        <value>&lt;li&gt;We are asking if both you and your child will participate in the study. 
-&lt;/li&gt;
- &lt;li&gt;
-You decide if you and your child want to take part.
+        <value>&lt;li&gt;You decide if you want your child to take part.
 &lt;/li&gt;
 &lt;li&gt;
 You can say ‘No’ or you can say ‘Yes’.
@@ -125,7 +129,7 @@ No one will be upset if you say ‘No’.
 If you say ‘Yes’, you can always say ‘No’ later.
 &lt;/li&gt;
 &lt;li&gt;
-Your child can participate in the study even if you do not. You can participate in the study even if your child does not. 
+Saying &apos;No&apos; or &apos;Yes&apos; will not affect your child&apos;s participation in Techbridge Girls in any way. 
 &lt;/li&gt;</value>
     </labels>
     <labels>
@@ -133,14 +137,14 @@ Your child can participate in the study even if you do not. You can participate 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_ClassReg_EvalStudyH3</shortDescription>
-        <value>What would happen if I join this evaluation study?</value>
+        <value>What would happen if my child joins this evaluation study?</value>
     </labels>
     <labels>
         <fullName>C501_ClassReg_EvalStudyH3P1</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_ClassReg_EvalStudyH3P1</shortDescription>
-        <value>If you decide to participate in the study, we would ask you and your child to do the following:</value>
+        <value>If you decide to participate in the study, we would ask your child to do the following:</value>
     </labels>
     <labels>
         <fullName>C501_ClassReg_EvalStudyH3li</fullName>
@@ -148,16 +152,13 @@ Your child can participate in the study even if you do not. You can participate 
         <protected>false</protected>
         <shortDescription>C501_ClassReg_EvalStudyH3li</shortDescription>
         <value>&lt;li&gt;
-Questions for you: We would ask you to read questions on a piece of paper or online.  Then you would mark your answers on the paper or online form.
+Talking with your child: A person on the evaluation team would talk your child, either individually or as part of a group of youth and ask them questions. Then your child would answer the questions out loud.
 &lt;/li&gt;
 &lt;li&gt;
-Questions for your child: We would ask your child to read questions on a piece of paper or online.  Then your child would mark their answers on the paper or online form.
+Type answers to our questions on a computer. 
 &lt;/li&gt;
 &lt;li&gt;
-Talking with your child: A person on the evaluation team would talk to a group of youth and ask them questions. Then your child would answer the questions out loud.
-&lt;/li&gt;
-&lt;li&gt;
-We may also look at your child’s school information, like attendance and courses taken.
+We will also look at your child’s school information, like attendance, grades, and courses taken.
 &lt;/li&gt;</value>
     </labels>
     <labels>
@@ -375,7 +376,7 @@ We may also look at your child’s school information, like attendance and cours
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_RegSite_Grade</shortDescription>
-        <value>Grade</value>
+        <value>Grade (for 2020-21 school year)</value>
     </labels>
     <labels>
         <fullName>C501_RegSite_InvalidEmailPhone</fullName>
@@ -403,7 +404,7 @@ We may also look at your child’s school information, like attendance and cours
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_RegSite_Login</shortDescription>
-        <value>Log in</value>
+        <value>Register your child for Techbridge Girls!</value>
     </labels>
     <labels>
         <fullName>C501_RegSite_NotProvided</fullName>
@@ -438,7 +439,7 @@ We may also look at your child’s school information, like attendance and cours
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_RegSite_ProvidePhoneEmail</shortDescription>
-        <value>Please provide your phone number or email address to log in.</value>
+        <value>Please provide your phone number or email address to access the student registration system. Your phone number or email address will be used to receive an access code.</value>
     </labels>
     <labels>
         <fullName>C501_RegSite_RememberMeDevice</fullName>
@@ -452,7 +453,7 @@ We may also look at your child’s school information, like attendance and cours
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_RegSite_SiteRegFormTitle</shortDescription>
-        <value>Techbridge Girls Class Registration Form</value>
+        <value>Techbridge Girls Student Registration Form</value>
     </labels>
     <labels>
         <fullName>C501_RegSite_State</fullName>
@@ -480,7 +481,7 @@ We may also look at your child’s school information, like attendance and cours
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_RegSite_WeSentYouCode</shortDescription>
-        <value>We just sent you code to the phone number or email address you provided. What is the code?</value>
+        <value>We just sent you a code to the phone number or email address you provided. What is the code?</value>
     </labels>
     <labels>
         <fullName>C501_RegSite_Youarenotauthenticated</fullName>

@@ -143,6 +143,7 @@
         <members>C501_ClassReg_parentFamilyConsent</members>
         <members>C501_ClassReg_seattleArea</members>
         <members>C501_ClassReg_southBay</members>
+        <members>C501_ClassReg_VirtualClass</members>
         <members>C501_RegSite_ChildEmail</members>
         <members>C501_RegSite_ChildFirstName</members>
         <members>C501_RegSite_ChildLastName</members>

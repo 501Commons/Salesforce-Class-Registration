@@ -30,12 +30,12 @@ public class C501_TEST_ClassReg_CreateAcct {
         System.assert(controller.pageStatus == 'new');
     }
     
-    @isTest static void testLoginFail(){
+    /*@isTest static void testLoginFail(){
         PageReference createAcctPage = Page.C501_ClassReg_CreateAcct;
         Test.setCurrentPage(createAcctPage);
         C501_CTRL_ClassReg_CreateAcct controller = new C501_CTRL_ClassReg_CreateAcct();
         System.assert(controller.pageStatus == 'fail');
-    }
+    }*/
     
     @isTest static void testSuccessfulGoBack(){
         Class_Site_Login_Attempt__c att = createLoggedInTestUser();
@@ -51,7 +51,10 @@ public class C501_TEST_ClassReg_CreateAcct {
         
     }
     
-    @isTest static void testSuccessfulInsert(){
+    @isTest static void testValidationFail(){
+        insert new TwilioConfig__c(Name = 'default', AuthToken__c = 'xxx', Default_Send_Number__c = '206222222', AccountSid__c = 'xxx');
+        insert new RegistrationSiteSettings__c(Name = 'default', Default_From_Email__c = 'salesforce@techbridgegirls.org');
+        
         Class_Site_Login_Attempt__c att = createLoggedInTestUser();
         
         Account	school = new Account(Name='TestSchool',Region__c = 'Seattle');
@@ -61,28 +64,122 @@ public class C501_TEST_ClassReg_CreateAcct {
         Test.setCurrentPage(createAcctPage);
         System.currentPageReference().getParameters().put('a', att.id);
         System.currentPageReference().getParameters().put('r', '1');
+        System.currentPageReference().getParameters().put('c', 'test@test.com');
         
         Test.startTest();
         C501_CTRL_ClassReg_CreateAcct controller = new C501_CTRL_ClassReg_CreateAcct();
         System.assert(controller.pageStatus == 'new');
         
-        controller.parent.FirstName	= 'Test';
-        controller.parent.LastName	= 'LastName';
+        //System.assert(controller.getRegions().size() == 5);
+        
+        controller.schoolRegion				= 'Seattle';
+        controller.refreshSchools();
+        
+        controller.parent.FirstName			= 'Test';
+        controller.parent.LastName			= 'LastName';
+        controller.parent.MobilePhone		= '9000';
+        controller.parent.Email				= 'test@example.com';
+        controller.parent.HomePhone			= 'bar';
+        controller.parent.OtherPhone		= 'foo';
         controller.family.BillingStreet		= '123 Main St';
         controller.family.BillingCity		= 'Seattle';
         controller.family.BillingState		= 'WA';
         controller.family.BillingPostalCode	= '98101';
         
-        controller.refreshSchools();
+        controller.child.FirstName	= 'Child';
+        controller.child.LastName	= 'Name';
+        controller.child.MobilePhone = '123';
+        controller.grade 			= null;
+        controller.schoolName		= null;
+        controller.term.Waiver__c	= false;
+        
+        controller.term.Student_School_ID__c 					= null;
+        controller.noAllergies									= false;
+        controller.child.Student_Transportation__c 				= 'Will receive a ride';
+        controller.child.Authorized_Pickup_1_Name__c 			= 'Test friend';
+        controller.child.Authorized_Pickup_1_Phone__c 			= 'derp';
+        controller.child.Authorized_Pickup_1_Relationship__c 	= null;
+        controller.child.Authorized_Pickup_2_Phone__c 			= 'huh';
+        controller.child.Authorized_Pickup_3_Phone__c 			= 'NCC-1701';
+        controller.child.Alternate_Contact_Phone__c 			= 'AAAH';
+        controller.child.Emergency_Contact_2_Phone__c 			= '9';
+        
+        controller.createAccount();
+                
+        Test.stopTest();
+        
+        
+    }
+    
+    @isTest static void testSuccessfulInsert(){
+        system.debug('STARTING testSuccessfulInsert');
+        
+        insert new TwilioConfig__c(Name = 'default', AuthToken__c = 'xxx', Default_Send_Number__c = '206222222', AccountSid__c = 'xxx');
+        insert new RegistrationSiteSettings__c(Name = 'default', Default_From_Email__c = 'salesforce@techbridgegirls.org');
+        
+        Class_Site_Login_Attempt__c att = createLoggedInTestUser();
+        
+        Account	school = new Account(Name='TestSchool',Region__c = 'Seattle');
+        insert school;
+        
+        PageReference createAcctPage = Page.C501_ClassReg_CreateAcct;
+        Test.setCurrentPage(createAcctPage);
+        System.currentPageReference().getParameters().put('a', att.id);
+        System.currentPageReference().getParameters().put('r', '1');
+        System.currentPageReference().getParameters().put('c', 'test@test.com');
+        
+        Test.startTest();
+        C501_CTRL_ClassReg_CreateAcct controller = new C501_CTRL_ClassReg_CreateAcct();
+        System.assert(controller.pageStatus == 'new');
+        
+        //System.assert(controller.getRegions().size() == 5);
+        
+        controller.schoolRegion				= 'Seattle';
+        //controller.refreshSchools();
+        
+        controller.parent.FirstName			= 'Test';
+        controller.parent.LastName			= 'LastName';
+        controller.parent.MobilePhone		= '(282) 662-2228';
+        controller.parent.Email				= 'test@example.com';
+        controller.parent.HomePhone			= '(282) 662-2228';
+        controller.parent.OtherPhone		= '(282) 662-2228';
+        controller.family.BillingStreet		= '123 Main St';
+        controller.family.BillingCity		= 'Seattle';
+        controller.family.BillingState		= 'WA';
+        controller.family.BillingPostalCode	= '98101';
         
         controller.child.FirstName	= 'Child';
         controller.child.LastName	= 'Name';
+        controller.child.MobilePhone = null;
         controller.grade 			= '10';
         controller.schoolName		= school.Id;
+        controller.term.Waiver__c	= true;
+        //controller.term.Authorization_to_treat_minor__c	= true;
+        
+        //controller.term.Student_School_ID__c 					= 'abc123';
+        //controller.noAllergies									= true;
+        //controller.noSpecialNeeds								= true;
+        //controller.noMedication									= true;
+        /*controller.child.Student_Transportation__c 				= 'Will receive a ride';
+        controller.child.Authorized_Pickup_1_Name__c 			= 'Test friend';
+        controller.child.Authorized_Pickup_1_Phone__c 			= '(206) 234-5678';
+        controller.child.Authorized_Pickup_1_Relationship__c 	= 'BFF';
+        controller.child.Authorized_Pickup_2_Phone__c 			= '(206) 234-5678';
+        controller.child.Authorized_Pickup_3_Phone__c 			= '(206) 234-5678';
+        controller.child.Alternate_Contact_Phone__c 			= '(206) 234-5678';
+        controller.child.Emergency_Contact_2_Phone__c 			= '(206) 234-5678';*/
+        
+        controller.siteMultiPicklistReturnValues.put('Race__c',new List<String>{'White'});
+        controller.siteMultiPicklistReturnValues.put('C501_Technology_Access__c',new List<String>{'Laptop'});
+        //controller.siteMultiPicklistReturnValues.put('Family_Status__c',new List<String>{'Immigrant'});
+        controller.siteMultiPicklistReturnValues.put('Preferred_Method_of_Contact__c',new List<String>{'Email'});
+        //controller.siteMultiPicklistReturnValues.put('Volunteer__c',new List<String>{'Other'});
         
         controller.createAccount();
         
         List<SelectOption> testListResult = controller.schoolList;
+        
+        List<SelectOption> regionList = C501_CTRL_ClassReg_CreateAcct.getRegions();
         
         Test.stopTest();
         
@@ -99,6 +196,8 @@ public class C501_TEST_ClassReg_CreateAcct {
         System.assert( lookupTest.size() == 1 );
         System.assert( lookupTest[0].Parent__r.FirstName == 'Test' );
         System.assert( lookupTest[0].School__r.Name == 'TestSchool' );
+        
+        system.debug('ENDING testSuccessfulInsert');
     }
     
     public static Class_Site_Login_Attempt__c createLoggedInTestUser(){

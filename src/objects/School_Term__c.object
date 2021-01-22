@@ -42,16 +42,6 @@
                     <label>Paper</label>
                 </value>
                 <value>
-                    <fullName>byText</fullName>
-                    <default>false</default>
-                    <label>byText</label>
-                </value>
-                <value>
-                    <fullName>byEmail</fullName>
-                    <default>false</default>
-                    <label>byEmail</label>
-                </value>
-                <value>
                     <fullName>Online</fullName>
                     <default>false</default>
                     <label>Online</label>
@@ -424,6 +414,16 @@ TRUE, FALSE )</formula>
                     <fullName>2000-2001</fullName>
                     <default>false</default>
                     <label>2000-2001</label>
+                </value>
+                <value>
+                    <fullName>2020-2021</fullName>
+                    <default>false</default>
+                    <label>2020-2021</label>
+                </value>
+                <value>
+                    <fullName>2021-2022</fullName>
+                    <default>false</default>
+                    <label>2021-2022</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

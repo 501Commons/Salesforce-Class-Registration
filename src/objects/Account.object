@@ -59,6 +59,11 @@ SUBSTITUTE(C501_Class_Site_Mobile_Number__c, &quot;(&quot;, &quot;&quot;), &quot
                     <default>false</default>
                     <label>DC</label>
                 </value>
+                <value>
+                    <fullName>California</fullName>
+                    <default>false</default>
+                    <label>California</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

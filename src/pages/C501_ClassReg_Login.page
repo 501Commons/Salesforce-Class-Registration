@@ -15,9 +15,7 @@
                 <div class="col-md-6">
                     <apex:outputPanel rendered="{! pageStatus == 'start' || pageStatus == 'lookup-fail'}">
                         <apex:outputPanel rendered="{! pageStatus == 'start' }">
-                            <p>
-                                {! $Label.C501_RegSite_ProvidePhoneEmail }
-                            </p>
+                        	<apex:outputText escape="false" value="{! $Label.C501_RegSite_LoginIntro }"></apex:outputText>
                         </apex:outputPanel>
                         <apex:outputPanel rendered="{! pageStatus == 'lookup-fail' }">
                             <p>
@@ -55,10 +53,10 @@
                             <p>
                                 <apex:inputText styleClass="form-control" value="{!confirmation }" required="true" />
                             </p>
-                            <p>
+                            <!--<p>
                                 <apex:inputCheckbox styleClass="form-check-input" value="{!remember}" required="true" />
     							<label class="form-check-label" >{! $Label.C501_RegSite_RememberMeDevice }</label>
-                            </p>
+                            </p>-->
                             <div class="prominent_button">
                                 <apex:commandLink action="{!confirmLoginBySendToAddress}" value="Go" />
                                 <!--<apex:commandLink action="{!confirmLogin}" value="Go" />-->

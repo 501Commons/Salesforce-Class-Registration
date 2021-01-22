@@ -16,7 +16,9 @@ public class C501_CTRL_ClassReg_SelectLang {
     
     public PageReference changeLang() {
         Map<String,String> currentPageParameters = ApexPages.currentPage().getParameters();
-        return C501_UTIL_ClassRegUtilities.generatePageLink('C501_ClassReg_Login','l',language);
+        // Changed September 2020 to disable the SMS verification
+        //return C501_UTIL_ClassRegUtilities.generatePageLink('C501_ClassReg_Login','l',language);
+        return C501_UTIL_ClassRegUtilities.generatePageLink('C501_ClassReg_CreateAcct','l',language);
     }
     
     public C501_CTRL_ClassReg_SelectLang(){
