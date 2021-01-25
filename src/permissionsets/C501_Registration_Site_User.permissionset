@@ -77,11 +77,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Contact.After_school_program_virtual__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Contact.Allergies__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -268,6 +263,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>School_Term__c.C501_Sign_Up_Source__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>School_Term__c.C501_Virtual_Program__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

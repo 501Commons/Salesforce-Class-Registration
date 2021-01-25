@@ -212,7 +212,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>{! $Label.C501_ClassReg_VirtualClass }</label>
-                                <apex:inputField styleClass="form-control" value="{!child.After_school_program_virtual__c }"/>
+                                <apex:inputField styleClass="form-control" value="{!term.C501_Virtual_Program__c }"/>
                             </div>
                         </div>
                     </div>

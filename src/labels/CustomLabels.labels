@@ -355,7 +355,7 @@ We will also look at your child’s school information, like attendance, grades,
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>C501_ClassReg_VirtualClass</shortDescription>
-        <value>After-school program virtual</value>
+        <value>Is this a virtual Program?</value>
     </labels>
     <labels>
         <fullName>C501_ClassReg_WaiverRequired</fullName>
